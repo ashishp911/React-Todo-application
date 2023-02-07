@@ -7,7 +7,7 @@ import Footer from './MyComponents/Footer'
 function App() {
   return (
     <>
-    <Header/>
+    <Header title = "MyTodosList" searchBar = {true}/>
     <Todos/>
     <Footer/>
     </>
