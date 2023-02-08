@@ -1,11 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './MyComponents/Header.js';
-import Todos from './MyComponents/Todos'
+import {Todos} from './MyComponents/Todos'
 import Footer from './MyComponents/Footer'
+import React, { useState } from 'react';
 
 function App() {
-  const todos = [
+  
+  const onDelete = (todo) => {
+    console.log("I am Ondelete of ", todo)
+    setTodos(todos.filter((e) => {
+      return e !== todo
+    }))
+  }
+  
+  const [todos, setTodos] = useState([
     {
       srno:1,
       title:"Go to the market",
@@ -17,16 +26,17 @@ function App() {
       description: "You need to go to the mall to get this job done."
     },
     {
-      srno:1,
+      srno:3,
       title:"Go to the School",
       description: "You need to go to the school to get this job done."
     },
-  ]
+  ]);
+
   return (
     <>
     <Header title = "MyTodosList" searchBar = {true}/>
-    <Todos todos = {todos}/>
-    <Footer/>
+    <Todos todos = {todos} onDelete = {onDelete}/>
+    {/* <Footer/> */}
     </>
   );
 }
