@@ -10,7 +10,7 @@ const AddTodo = ({addTodo}) => {
             alert("Title or description cannot be empty");
         }
         else{
-            console.log("Im here and desc is ", desc);
+            // console.log("Im here and desc is ", desc);
             addTodo(title, desc);
         }
     }
