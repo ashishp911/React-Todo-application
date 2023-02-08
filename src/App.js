@@ -8,7 +8,7 @@ import React, { useState } from 'react';
 function App() {
   
   const onDelete = (todo) => {
-    console.log("I am Ondelete of ", todo)
+    // console.log("I am Ondelete of ", todo)
     setTodos(todos.filter((e) => {
       return e !== todo
     }))
@@ -36,7 +36,7 @@ function App() {
     <>
     <Header title = "MyTodosList" searchBar = {true}/>
     <Todos todos = {todos} onDelete = {onDelete}/>
-    {/* <Footer/> */}
+    <Footer/>
     </>
   );
 }
