@@ -20,7 +20,7 @@ function App() {
     const mytodo = {
       srno : srno,
       title : title,
-      desc : desc,
+      description : desc,
     }
     console.log(mytodo);
     setTodos([...todos,mytodo]);

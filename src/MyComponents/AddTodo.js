@@ -9,8 +9,10 @@ const AddTodo = ({addTodo}) => {
         if (!title || !desc){
             alert("Title or description cannot be empty");
         }
-        // console.log("Im here and title is ", title);
-        addTodo(title, desc);
+        else{
+            console.log("Im here and desc is ", desc);
+            addTodo(title, desc);
+        }
     }
   return (
     <div className="container my-3">
