@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
-const addTodo = () => {
+const AddTodo = ({addTodo}) => {
+    const [title, setTitle] = useState("");
+    const [desc, setDesc] = useState("");
+    
+    const submit = (e) => {
+        e.preventDefault();
+        if (!title || !desc){
+            alert("Title or description cannot be empty");
+        }
+        // console.log("Im here and title is ", title);
+        addTodo(title, desc);
+    }
   return (
     <div className="container my-3">
       <h3>Add a Todo</h3>
-      <form>
+      <form onSubmit={submit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
             Todo Title
@@ -13,8 +24,12 @@ const addTodo = () => {
             type="text"
             className="form-control border border-secondary"
             id="title"
+            value={title}
             aria-describedby="emailHelp"
             placeholder="Enter Todo"
+            onChange={(e)=>{
+                setTitle(e.target.value);
+            }}
           />
         </div>
         <div className="mb-3">
@@ -25,7 +40,11 @@ const addTodo = () => {
             type="text"
             className="form-control border border-secondary"
             id="desc"
+            value={desc}
             placeholder="Enter description"
+            onChange={(e)=>{
+                setDesc(e.target.value);
+            }}
           />
         </div>
         <button type="submit" className="btn btn-sm btn-success">
@@ -36,4 +55,4 @@ const addTodo = () => {
   );
 };
 
-export default addTodo;
+export default AddTodo;
