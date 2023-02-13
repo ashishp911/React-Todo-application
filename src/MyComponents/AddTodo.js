@@ -12,6 +12,8 @@ const AddTodo = ({addTodo}) => {
         else{
             // console.log("Im here and desc is ", desc);
             addTodo(title, desc);
+            setTitle("");
+            setDesc("");
         }
     }
   return (
