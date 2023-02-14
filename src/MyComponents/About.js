@@ -1,6 +1,6 @@
 import React from "react";
 
-const About = () => {
+export const About = () => {
   return (
     <div>
       This is an about component
@@ -13,4 +13,4 @@ const About = () => {
   );
 };
 
-export default About;
+// export default About;
