@@ -32,7 +32,7 @@ function App() {
 
   const addTodo = (title, desc) => {
     let srno;
-    if (todos.length == 0) {
+    if (todos.length === 0) {
       srno = 0;
     } else {
       srno = todos[todos.length - 1].srno + 1;
@@ -43,7 +43,7 @@ function App() {
       title: title,
       description: desc,
     };
-    console.log(mytodo);
+    // console.log(mytodo);
     setTodos([...todos, mytodo]);
   };
 
@@ -54,11 +54,6 @@ function App() {
 
   return (
     <>
-      {/* <Header title="MyTodosList" searchBar={true} />
-      <AddTodo addTodo={addTodo} />
-      <Todos todos={todos} onDelete={onDelete} />
-      <Footer /> */}
-
       <Router>
         <Header title="MyTodosList" searchBar={true} />
         <Routes>
