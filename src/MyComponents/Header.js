@@ -31,6 +31,6 @@ export default function Header(props) {
 
 
 
-Header.PropTypes = {
+Header.propTypes = {
     title: PropTypes.string
 }
