@@ -6,7 +6,7 @@ import Footer from "./MyComponents/Footer";
 import AddTodo from "./MyComponents/AddTodo";
 import {About} from "./MyComponents/About"
 import React, { useState, useEffect } from "react";
-
+import Logo from "./MyComponents/Logo";
 import {
   BrowserRouter as Router,
   Routes,
@@ -58,8 +58,10 @@ function App() {
         <Header title="MyTodosList" searchBar={true} />
         <Routes>
           <Route exact path="/" element = {[
+          <Logo/>,
           <AddTodo addTodo={addTodo} />, 
-          <Todos todos={todos} onDelete={onDelete} />]
+          <Todos todos={todos} onDelete={onDelete} />
+          ]
           }/>
           <Route exact path="/about" element = {<About />}/>
         </Routes>
